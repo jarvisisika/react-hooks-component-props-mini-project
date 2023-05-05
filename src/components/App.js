@@ -1,13 +1,19 @@
-import React from 'react'
+import React from "react";
+import blogData from "../data/blog";
+import Header from "./Header";
+import About from "./About";
+import ArticleList from "./ArticleList";
 
-function About({image="https://via.placeholder.com/215",about}) {
+console.log(blogData);
 
+function App() {
   return (
-    <aside>
-        <img src={image} alt='blog logo'/>
-        <p>{about}</p>
-    </aside>
-  )
+    <div className="App">
+      <Header name={blogData.name}/>
+      <About image={blogData.image} about={blogData.about}/>
+      <ArticleList posts={blogData.posts}/>
+    </div>
+  );
 }
 
-export default About
+export default App;
